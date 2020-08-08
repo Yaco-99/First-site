@@ -1,0 +1,214 @@
+body{
+    background-color: rgb(221, 221, 221);
+}
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background-color: black;
+}
+.inner_header{
+    width: 77%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.logo_container{
+    height: 100%;
+    display: table;
+    float: left;
+    padding-left: 12px;
+}
+.logo_container h1{
+    color:white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Palatino Linotype";
+}
+.navigation{
+    float: right;
+    margin: 0;
+    height: 100%;
+}
+.navigation button{
+    height: 100%;
+    float: left;
+    display: table;
+    padding: 10px 25px;
+    background-color: black;
+    border-top:none;
+    border-bottom: none;
+    border-left: 1px solid white;
+}
+.navigation button:hover{
+    cursor: pointer;
+}
+.navigation button:last-child{
+    border-right: 1px solid white;
+}
+
+.navigation button li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: white;
+}
+.plan img{
+    max-width: 205px;
+    max-height: 205px;
+    min-width: 205px;
+    min-height: 205px;
+    padding:0px;
+}
+.plan table{
+    margin-top: 20px;
+    width: 75%;
+    min-height: 750px;
+    margin-left: 12%;
+    margin-right:13%;
+    background-color: rgb(240, 240, 240);
+    border-collapse: collapse;
+}
+.plan th{
+    border: 1px solid black;
+    height: 40px;
+    line-height: 40px;
+}
+.plan td{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    min-width: 205px;
+    max-width: 205px;
+    font-weight: bold;
+    vertical-align: top;
+}
+.plan tr:last-child{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.plan table a {
+    color:black;
+    text-decoration: underline;
+}
+.list table{
+    width: 10%;
+    margin-top: 20px;
+    display: block;
+    background-color: rgb(240, 240, 240);
+    float: left;
+    min-height: 750px;
+    border-collapse: collapse;
+}
+.list th{
+    border: 1px solid black;
+    width: 10%;
+}
+.list td {
+    border: 1px solid black;
+    padding: 5px;
+    height: 750px;
+    line-height: 10px;
+    vertical-align: top;
+}
+
+.list a {
+    color: black;
+    text-decoration: none;
+}
+.modal{
+  position: fixed;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 10;
+}
+.modal-header h1{
+    display: inline;
+}
+.selection{
+    display: inline;
+    padding-left: 20px;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.form-container{
+    background-color: rgb(31, 31, 31);
+    color: white;
+    padding: 10px; 
+}
+.form-container #titre{
+    display: inline-flex;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.form-container #jour{
+    display: inline-flex;
+    padding-left: 19px;
+    height: 26px;
+    line-height: 26px;
+}
+.form-container #lien{
+    display: inline-flex;
+    padding-left: 10px;
+}
+.form-container input[name=titre]{
+    width: 64%;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background-color:white;
+    color: black;
+    box-sizing: border-box;
+    display: inline;
+}
+.form-container input[name=lien]{
+    width: 85%;
+    padding: 5px;
+    border: none;
+    background-color:white;
+    color: black;
+    display: inline;
+}
+
+.form-container input[type=text]:focus{
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.8;
+}
+.form-container .close-button {
+    background-color: red;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  .form-container .btn{
+    margin-left: 332px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+.form-container .btn:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+ 
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
