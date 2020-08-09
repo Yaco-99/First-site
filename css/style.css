@@ -1,123 +1,227 @@
-body{
-    background-color: rgb(221, 221, 221);
+body {
+  background-color: rgb(221, 221, 221);
+  margin: 0;
 }
-.header{
+.header {
+  width: 100%;
+  height: 80px;
+  display: block;
+  background-color: black;
+}
+.inner_header {
+  width: 77%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.logo_container {
+  height: 100%;
+  display: table;
+  float: left;
+  padding-left: 12px;
+}
+.logo_container h1 {
+  color: white;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: "Palatino Linotype";
+}
+.navigation {
+  float: right;
+  margin: 0;
+  height: 100%;
+}
+.navigation button {
+  height: 100%;
+  float: left;
+  display: table;
+  padding: 10px 25px;
+  background-color: black;
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid white;
+}
+.navigation button:hover {
+  cursor: pointer;
+}
+.navigation button:last-child {
+  border-right: 1px solid white;
+  margin-right: 30px;
+}
+
+.navigation button li {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  color: white;
+}
+@media screen and (max-width: 1660px) {
+  .header {
     width: 100%;
     height: 80px;
     display: block;
     background-color: black;
-}
-.inner_header{
+  }
+  .inner_header {
     width: 77%;
     height: 100%;
     display: block;
     margin: 0 auto;
-}
-.logo_container{
+  }
+  .logo_container {
     height: 100%;
     display: table;
     float: left;
     padding-left: 12px;
-}
-.logo_container h1{
-    color:white;
+  }
+  .logo_container h1 {
+    color: white;
     height: 100%;
     display: table-cell;
     vertical-align: middle;
     font-family: "Palatino Linotype";
-}
-.navigation{
+  }
+  .navigation {
     float: right;
     margin: 0;
     height: 100%;
-}
-.navigation button{
+  }
+  .navigation button {
     height: 100%;
     float: left;
     display: table;
     padding: 10px 25px;
     background-color: black;
-    border-top:none;
+    border-top: none;
     border-bottom: none;
     border-left: 1px solid white;
-}
-.navigation button:hover{
+  }
+  .navigation button:hover {
     cursor: pointer;
-}
-.navigation button:last-child{
+  }
+  .navigation button:last-child {
     border-right: 1px solid white;
-}
+    margin-right: 28px;
+  }
 
-.navigation button li{
+  .navigation button li {
     display: table-cell;
     vertical-align: middle;
     height: 100%;
     color: white;
+  }
 }
-.plan img{
-    max-width: 205px;
-    max-height: 205px;
-    min-width: 205px;
-    min-height: 205px;
-    padding:0px;
+
+.plan table {
+  margin-top: 20px;
+  width: 75%;
+  min-height: 782px;
+  margin-left: 12%;
+  margin-right: 13%;
+  background-color: rgb(240, 240, 240);
+  border-collapse: collapse;
 }
-.plan table{
+.plan th {
+  border: 1px solid black;
+  height: 40px;
+  line-height: 40px;
+}
+.plan td {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  min-width: 180px;
+  max-width: 180px;
+  font-weight: bold;
+  vertical-align: top;
+}
+.plan tr:last-child {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.plan table a {
+  color: black;
+  text-decoration: underline;
+}
+.plan table img {
+  background-color: rgb(201, 201, 201);
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+@media screen and (max-width: 1660px) {
+  .plan table {
     margin-top: 20px;
     width: 75%;
-    min-height: 750px;
+    min-height: 782px;
     margin-left: 12%;
-    margin-right:13%;
+    margin-right: 13%;
     background-color: rgb(240, 240, 240);
     border-collapse: collapse;
-}
-.plan th{
+  }
+  .plan th {
     border: 1px solid black;
     height: 40px;
     line-height: 40px;
-}
-.plan td{
+  }
+  .plan td {
     border-left: 1px solid black;
     border-right: 1px solid black;
-    min-width: 205px;
-    max-width: 205px;
+    min-width: 130px;
+    max-width: 130px;
     font-weight: bold;
     vertical-align: top;
-}
-.plan tr:last-child{
+  }
+  .plan tr:last-child {
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-}
-.plan table a {
-    color:black;
+  }
+  .plan table a {
+    color: black;
     text-decoration: underline;
+  }
+  .plan table img {
+    max-width: 140px;
+    min-height: 140px;
+    max-height: 140px;
+  }
 }
-.list table{
-    width: 10%;
-    margin-top: 20px;
-    display: block;
-    background-color: rgb(240, 240, 240);
-    float: left;
-    min-height: 750px;
-    border-collapse: collapse;
+.list {
+  margin-left: 15px;
+  max-height: 750px;
 }
-.list th{
-    border: 1px solid black;
-    width: 10%;
+.list table {
+  overflow-y: auto;
+  width: 10%;
+  margin-top: 20px;
+  display: block;
+  background-color: rgb(240, 240, 240);
+  float: left;
+  min-height: 750px;
+  max-height: 783px;
+  border-collapse: collapse;
+}
+.list th {
+  border: 1px solid black;
+  width: 10%;
 }
 .list td {
-    border: 1px solid black;
-    padding: 5px;
-    height: 750px;
-    line-height: 10px;
-    vertical-align: top;
+  border: 1px solid black;
+  padding: 5px;
+  height: 750px;
+  line-height: 10px;
+  vertical-align: top;
 }
 
 .list a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
-.modal{
+.modal {
   position: fixed;
   width: 500px;
   top: 50%;
@@ -126,89 +230,190 @@ body{
   transition: 200ms ease-in-out;
   z-index: 10;
 }
-.modal-header h1{
-    display: inline;
+.modal-header h1 {
+  display: inline;
 }
-.selection{
-    display: inline;
-    padding-left: 20px;
-}
-
-.modal.active{
-    transform: translate(-50%, -50%) scale(1);
-}
-.form-container{
-    background-color: rgb(31, 31, 31);
-    color: white;
-    padding: 10px; 
-}
-.form-container #titre{
-    display: inline-flex;
-    padding-top: 20px;
-    padding-left: 10px;
-}
-.form-container #jour{
-    display: inline-flex;
-    padding-left: 19px;
-    height: 26px;
-    line-height: 26px;
-}
-.form-container #lien{
-    display: inline-flex;
-    padding-left: 10px;
-}
-.form-container input[name=titre]{
-    width: 64%;
-    padding: 5px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background-color:white;
-    color: black;
-    box-sizing: border-box;
-    display: inline;
-}
-.form-container input[name=lien]{
-    width: 85%;
-    padding: 5px;
-    border: none;
-    background-color:white;
-    color: black;
-    display: inline;
+.selection {
+  display: inline;
+  padding-left: 20px;
 }
 
-.form-container input[type=text]:focus{
-    border: none;
-    cursor: pointer;
-    width: 50%;
-    opacity: 0.8;
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.form-container {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  padding: 10px;
+}
+.form-container #titre {
+  display: inline-flex;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+.form-container #jour {
+  display: inline-flex;
+  padding-left: 19px;
+  height: 26px;
+  line-height: 26px;
+}
+.form-container #lien {
+  display: inline-flex;
+  padding-left: 10px;
+}
+.form-container input[name="titre"] {
+  width: 64%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  display: inline;
+}
+.form-container input[name="lien"] {
+  width: 85%;
+  padding: 5px;
+  border: none;
+  background-color: white;
+  color: black;
+  display: inline;
 }
 .form-container .close-button {
-    background-color: red;
-    cursor: pointer;
-    margin-top: 30px;
-  }
-  .form-container .btn{
-    margin-left: 332px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-.form-container .btn:hover{
-    opacity: 1;
-    cursor: pointer;
-  }
- 
-#overlay{
-    position: fixed;
-    opacity: 0;
-    transition: 200ms ease-in-out;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
-    pointer-events: none;
+  background-color: red;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.form-container .btn {
+  margin-left: 332px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.form-container .btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 #overlay.active {
-    opacity: 1;
-    pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.footer {
+  width: 100%;
+  height: 150px;
+  display: block;
+  background-color: rgb(48, 48, 48);
+  margin-top: 65px;
+}
+.inner_footer {
+  width: 77%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.contact {
+  height: 100%;
+  padding-left: 10px;
+  display: block;
+  color: white;
+  border-left: solid 1px white;
+  float: left;
+}
+.contact h4 {
+  display: block;
+  font-family: "Palatino Linotype";
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 15px;
+  margin: 0;
+}
+.contact h4:first-child {
+  padding-top: 10px;
+}
+.contact p {
+  display: block;
+  font-size: 12px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.contact p:last-child {
+  padding-bottom: 0;
+}
+.contact a {
+  color: white;
+  text-decoration: none;
+}
+.adresse {
+  height: 100%;
+  padding-left: 10px;
+  display: block;
+  color: white;
+  border-left: solid 1px white;
+  float: left;
+  margin-left: 200px;
+}
+.adresse h4 {
+  display: block;
+  font-family: "Palatino Linotype";
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 15px;
+  margin: 0;
+}
+.adresse h4:first-child {
+  padding-top: 10px;
+}
+.adresse p {
+  display: block;
+  font-size: 12px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.adresse p:last-child {
+  padding-bottom: 0;
+}
+.about {
+  height: 100%;
+  max-width: 250px;
+  padding-left: 10px;
+  display: block;
+  color: white;
+  border-left: solid 1px white;
+  float: left;
+  margin-left: 200px;
+}
+.about h4 {
+  display: block;
+  font-family: "Palatino Linotype";
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 15px;
+  margin: 0;
+}
+.about h4:first-child {
+  padding-top: 10px;
+}
+.about p {
+  display: block;
+  font-size: 12px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.about p:last-child {
+  padding-bottom: 0;
 }

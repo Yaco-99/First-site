@@ -1,136 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Document</title>
-    <script defer src="js/myScript.js"></script> 
-</head>
-<body>
+    <script defer src="js/myScript.js"></script>
+  </head>
+  <body>
     <div class="header">
-        <div class="inner_header">
-            <div class="logo_container">
-                <h1>Planning</h1>
-            </div>
-            <ul class="navigation">
-                <button data-modal-target="#modal" class="open-button"><li>Ajouter</li></button>
-                <button data-modal-target="#modalsup" class="open-button"><li>Supprimer</li></button>
-            </ul>
+      <div class="inner_header">
+        <div class="logo_container">
+          <h1>Planning</h1>
         </div>
+        <ul class="navigation">
+          <button data-modal-target="#modal" class="open-button">
+            <li>Ajouter</li>
+          </button>
+          <button data-modal-target="#modalsup" class="open-button">
+            <li>Supprimer</li>
+          </button>
+        </ul>
+      </div>
     </div>
-    <div class=list>
-        <table>
-            <tr>
-                <th>Animes terminés</th>
-            </tr>
-            <tr>
-                <td id="liste">  
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                    <a href=""><p>exemple</p></a>
-                </td>
-            </tr>
-        </table>
-        
+    <div class="list">
+      <table>
+        <tr>
+          <th>Animes terminés</th>
+        </tr>
+        <tr>
+          <td id="liste"></td>
+        </tr>
+      </table>
     </div>
-    <div class=plan>
-    <table>
-            <tr>
-                <th>Lundi</th>
-                <th>mardi</th>
-                <th>mercredi</th>
-                <th>jeudi</th>
-                <th>vendredi</th>
-                <th>samedi</th>
-                <th>dimanche</th>
-            </tr>
-            <div class=tbody>
-            <tr>
-                <td><a href="">titre<img src="img/1.png" alt="1"></a></td>
-                <td>test</td>
-                <td>test</td>
-                <td><a href="">titre <img src="img/2.png" alt="2"></a></td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-            <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td><a href="">titre<img src="img/3.png" alt="3"></a></td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-            </div>
-    </table>
+    <div class="plan">
+      <table>
+        <tr>
+          <th>Lundi</th>
+          <th>mardi</th>
+          <th>mercredi</th>
+          <th>jeudi</th>
+          <th>vendredi</th>
+          <th>samedi</th>
+          <th>dimanche</th>
+        </tr>
+        <div class="tbody">
+          <tr>
+            <td id="lundi"></td>
+            <td id="mardi"></td>
+            <td id="mercredi"></td>
+            <td id="jeudi"></td>
+            <td id="vendredi"></td>
+            <td id="samedi"></td>
+            <td id="dimanche"></td>
+          </tr>
+        </div>
+      </table>
     </div>
     <div class="modal" id="modal">
-        <form class="form-container">
-        <div class=modal-header>
-        <h1>Ajouter</h1>
-        <div class="selection">
+      <form class="form-container" id="myform">
+        <div class="modal-header">
+          <h1>Ajouter</h1>
+          <div class="selection">
             <select id="choix">
-                <option value="0">choix</option>
-                <option value="1">Liste</option>
-                <option value="2">Planning</option>
+              <option value="0">choix</option>
+              <option value="1">Liste</option>
+              <option value="2">Planning</option>
             </select>
+          </div>
         </div>
-        </div>
-        <label id="titre" for="titre"><p><b>Titre :</b></p></label>
-        <input type="text" name=titre id="title">
+        <label id="titre" for="titre"
+          ><p><b>Titre :</b></p></label
+        >
+        <input type="text" name="titre" id="title" />
         <div class="selection" id="jour">
-            <select>
-                <option value="0">Jours</option>
-                <option value="1">Lundi</option>
-                <option value="2">Mardi</option>
-                <option value="3">Mercredi</option>
-                <option value="4">Jeudi</option>
-                <option value="5">Vendredi</option>
-                <option value="6">Samedi</option>
-                <option value="7">Dimanche</option>
-            </select>
+          <select id="selectJour">
+            <option value="0">Jours</option>
+            <option value="1">Lundi</option>
+            <option value="2">Mardi</option>
+            <option value="3">Mercredi</option>
+            <option value="4">Jeudi</option>
+            <option value="5">Vendredi</option>
+            <option value="6">Samedi</option>
+            <option value="7">Dimanche</option>
+          </select>
         </div>
-        <label id="lien" for="lien"><p><b>Lien :</b></p></label>
-        <input type="text" name=lien>
-        <button type="submit" data-close-button class=btn data-add-target="#liste">Confirmer</button>
+        <label id="lien" for="lien"
+          ><p><b>Lien :</b></p></label
+        >
+        <input type="text" name="lien" id="adress" />
+        <button
+          type="submit"
+          data-close-button
+          class="btn"
+          data-add-target="#liste"
+        >
+          Confirmer
+        </button>
         <button data-close-button class="close-button">Annuler</button>
-        </form>
+      </form>
     </div>
     <div class="modal" id="modalsup">
-        <form action="php/form.php" class="form-container">
-            <div class=modal-header>
-                <h1>Supprimer</h1>
-                <div class="selection">
-                    <select>
-                        <option value="0">choix</option>
-                        <option value="1">Liste</option>
-                        <option value="2">Planning</option>
-                    </select>
-                </div>
-                </div>
-                <label id="titre" for="titre"><p><b>Titre :</b></p></label>
-                <input type="text" name=titre>
-                <button type="submit" data-close-button class=btn>Confirmer</button>
-                <button data-close-button class="close-button">Annuler</button>
-                </form>
-            </div>
+      <form class="form-container" id="myformSup">
+        <div class="modal-header">
+          <h1>Supprimer</h1>
+          <div class="selection">
+            <select id="choiceSupr">
+              <option value="0">choix</option>
+              <option value="1">Liste</option>
+              <option value="2">Planning</option>
+            </select>
+          </div>
+        </div>
+        <label id="titre" for="titre"
+          ><p><b>Titre :</b></p></label
+        >
+        <input type="text" name="titre" id="titleSup" />
+        <button type="submit" data-close-button class="btn">
+          Confirmer
+        </button>
+        <button data-close-button class="close-button">Annuler</button>
+      </form>
+    </div>
     <div id="overlay"></div>
-</body>
+    <div class="footer">
+      <div class="inner_footer">
+        <div class="contact">
+          <h4>Contact</h4>
+          <p>
+            email :
+            <a href="mailto:coopman.yannick@outlook.com"
+              >coopman.yannick@outlook.com</a
+            >
+          </p>
+          <p>
+            Telephone : 0420 69 69 69
+          </p>
+        </div>
+        <div class="adresse">
+          <h4>Address</h4>
+          <p>Fbg de Bruxelles 195, 6041 Charlero</p>
+        </div>
+        <div class="about">
+          <h4>About me</h4>
+          <p>
+            Yannick de Nazareth est un Juif de Galilée, né entre l'an 7 et l'an
+            5 av. J.-C.1. Il apparaît dans le cercle de Jean le Baptiste avant
+            de s'engager, entouré de quelques disciples, dans une courte
+            carrière de prédication itinérante.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
