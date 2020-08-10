@@ -60,7 +60,7 @@ function setmyId(data, titleParap, day) {
 function addToWatch(data) {
   const titleParap = document.createElement("a");
   titleParap.href = data.adressInputValue;
-  titleParap.innerHTML = `${data.titleInputValue} <img src="${data.imageValue.path}" alt="erreur" />`;
+  titleParap.innerHTML = `${data.titleInputValue} <img src="${data.imageValue}" alt="erreur" />`;
   console.log(data.imageValue);
   let day = document.getElementById("selectJour").value;
   day = parseInt(day);
@@ -106,14 +106,15 @@ function suprToWatch(dataSupr) {
 }
 
 const myForm = document.getElementById("myform");
-const _handleSubmit = (e) => {
+const _handleSubmit = async (e) => {
   e.preventDefault();
   const titleInputValue = document.getElementById("title").value;
   const adressInputValue = document.getElementById("adress").value;
   const choiceSelectValue = document.getElementById("choix").value;
-  const imageValue = document.getElementById("myfile").files[0];
+  const imageToUpload = document.getElementById("myfile").files[0];
 
-  uploadImage(imageValue);
+  const imageValue = await uploadImage(imageToUpload);
+  console.log({ imageValueIntoSubmit: imageValue });
 
   const data = {
     titleInputValue,
@@ -152,23 +153,23 @@ const _handleSupr = (e) => {
 myForm.addEventListener("submit", _handleSubmit);
 myformSup.addEventListener("submit", _handleSupr);
 
-function uploadImage(pictureFile) {
-  let link = "";
-  const data = new FormData();
-  data.append("image", pictureFile);
+const uploadImage = (pictureFile) => {
+  return new Promise((resolve, reject) => {
+    const data = new FormData();
+    data.append("image", pictureFile);
 
-  const xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
+    const xhr = new XMLHttpRequest();
 
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
-      console.log(this.responseText);
-      link = this.responseText.data.link;
-    }
+    xhr.onreadystatechange = function () {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        const res = JSON.parse(this.responseText);
+        resolve(res.data.link);
+      }
+    };
+
+    xhr.open("POST", "https://api.imgur.com/3/image");
+    xhr.setRequestHeader("Authorization", "Client-ID 955b6fc4ff1ae7f");
+
+    xhr.send(data);
   });
-
-  xhr.open("POST", "https://api.imgur.com/3/upload");
-  xhr.setRequestHeader("Authorization", "Client-ID 955b6fc4ff1ae7f");
-
-  xhr.send(data);
-}
+};
