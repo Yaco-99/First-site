@@ -167,7 +167,7 @@ function uploadImage(pictureFile) {
     }
   });
 
-  xhr.open("POST", "https://api.imgur.com/3/image");
+  xhr.open("POST", "https://api.imgur.com/3/upload");
   xhr.setRequestHeader("Authorization", "Client-ID 955b6fc4ff1ae7f");
 
   xhr.send(data);
