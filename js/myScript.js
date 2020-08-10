@@ -38,7 +38,7 @@ function closeModal(modal) {
 // addTitleButton.forEach((button) => {
 //   button.addEventListener("click", () => {
 //     if (document.getElementById("choix").value == 1) {
-//       console.log("JE RENTRE DANS LA CONDITION WSH");
+//       console.log("je suis dans la condition");
 //       const add = document.querySelector(button.dataset.addTarget);
 //       addTitle(add, data);
 //     }
@@ -104,6 +104,20 @@ function suprToWatch(dataSupr) {
   console.log(titleSupr);
   titleSupr.remove();
 }
+function hideImg() {
+  const hideImg = document.getElementById("imginput");
+  const hideDay = document.getElementById("jour");
+  const titleWidth = document.getElementById("title");
+  if (document.getElementById("choix").value == 1) {
+    hideImg.style.display = "none";
+    hideDay.style.display = "none";
+    titleWidth.style.width = "80%";
+  } else {
+    hideImg.style.display = "inline";
+    hideDay.style.display = "inline";
+    titleWidth.style.width = "60%";
+  }
+}
 
 const myForm = document.getElementById("myform");
 const _handleSubmit = async (e) => {
@@ -113,16 +127,19 @@ const _handleSubmit = async (e) => {
   const choiceSelectValue = document.getElementById("choix").value;
   const imageToUpload = document.getElementById("myfile").files[0];
 
-  const imageValue = await uploadImage(imageToUpload);
-  console.log({ imageValueIntoSubmit: imageValue });
+  let imageValue = 0;
 
+  if (imageToUpload != null) {
+    imageValue = await uploadImage(imageToUpload);
+    console.log({ imageValueIntoSubmit: imageValue });
+  }
   const data = {
     titleInputValue,
     adressInputValue,
     choiceSelectValue,
     imageValue,
   };
-
+  console.log(choiceSelectValue);
   if (choiceSelectValue == 0) {
     alert("Il faut choisir où ajouter la série !");
   } else if (choiceSelectValue == 1) {
@@ -142,6 +159,7 @@ const _handleSupr = (e) => {
     suptitleInputValue,
     supchoiceSelectValue,
   };
+
   if (supchoiceSelectValue == 0) {
     alert("Il faut choisir où supprimer la série !");
   } else if (supchoiceSelectValue == 1) {

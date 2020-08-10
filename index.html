@@ -62,7 +62,7 @@
         <div class="modal-header">
           <h1>Ajouter</h1>
           <div class="selection">
-            <select id="choix">
+            <select id="choix" onchange="hideImg()">
               <option value="0">choix</option>
               <option value="1">Liste</option>
               <option value="2">Planning</option>
@@ -89,10 +89,12 @@
           ><p><b>Lien :</b></p></label
         >
         <input type="text" name="lien" id="adress" />
-        <label id="img" for="myfile"
-          ><p><b>Image :</b></p></label
-        >
-        <input type="file" name="myfile" id="myfile" />
+        <div id="imginput">
+          <label id="img" for="myfile"
+            ><p><b>Image :</b></p></label
+          >
+          <input type="file" name="myfile" id="myfile" />
+        </div>
         <button
           type="submit"
           data-close-button
