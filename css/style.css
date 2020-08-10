@@ -254,7 +254,7 @@ body {
 }
 .form-container #jour {
   display: inline-flex;
-  padding-left: 19px;
+  padding-left: 15px;
   height: 26px;
   line-height: 26px;
 }
@@ -262,10 +262,15 @@ body {
   display: inline-flex;
   padding-left: 10px;
 }
+.form-container #img {
+  display: inline-flex;
+  padding-left: 10px;
+}
 .form-container input[name="titre"] {
-  width: 64%;
+  width: 60%;
   padding: 5px;
   margin: 5px 0 22px 0;
+  margin-left: 16px;
   border: none;
   background-color: white;
   color: black;
@@ -273,11 +278,19 @@ body {
   display: inline;
 }
 .form-container input[name="lien"] {
-  width: 85%;
+  width: 80%;
   padding: 5px;
+  margin-left: 16px;
   border: none;
   background-color: white;
   color: black;
+  display: inline;
+}
+.form-container input[name="myfile"] {
+  width: 60%;
+  padding: 5px;
+  border: none;
+  color: white;
   display: inline;
 }
 .form-container .close-button {
@@ -365,7 +378,7 @@ body {
   color: white;
   border-left: solid 1px white;
   float: left;
-  margin-left: 200px;
+  margin-left: 350px;
 }
 .adresse h4 {
   display: block;
@@ -395,7 +408,7 @@ body {
   color: white;
   border-left: solid 1px white;
   float: left;
-  margin-left: 200px;
+  margin-left: 350px;
 }
 .about h4 {
   display: block;

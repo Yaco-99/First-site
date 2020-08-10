@@ -53,10 +53,15 @@ function addTitle(data) {
   setId.setAttribute("id", data.titleInputValue + "l");
 }
 
+function setmyId(data, titleParap, day) {
+  setId = document.getElementById(day).appendChild(titleParap);
+  setId.setAttribute("id", data.titleInputValue + "p");
+}
 function addToWatch(data) {
   const titleParap = document.createElement("a");
   titleParap.href = data.adressInputValue;
-  titleParap.innerHTML = `${data.titleInputValue} <img src="/img/${data.titleInputValue}.png" alt="erreur" />`;
+  titleParap.innerHTML = `${data.titleInputValue} <img src="${data.imageValue.path}" alt="erreur" />`;
+  console.log(data.imageValue);
   let day = document.getElementById("selectJour").value;
   day = parseInt(day);
 
@@ -65,33 +70,25 @@ function addToWatch(data) {
       alert("Il faut choisir un jour !");
       break;
     case 1:
-      setId = document.getElementById("lundi").appendChild(titleParap);
-      setId.setAttribute("id", data.titleInputValue + "p");
-      console.log(setId);
+      setmyId(data, titleParap, day);
       break;
     case 2:
-      setId = document.getElementById("mardi").appendChild(titleParap);
-      setId.setAttribute("id", data.titleInputValue + "p");
+      setmyId(data, titleParap, day);
       break;
     case 3:
-      setId = document.getElementById("mercredi").appendChild(titleParap);
-      setId.setAttribute("id", data.titleInputValue + "p");
+      setmyId(data, titleParap, day);
       break;
     case 4:
-      setId = document.getElementById("jeudi").appendChild(titleParap);
-      setId.setAttribute("id", data.titleInputValue + "p");
+      setmyId(data, titleParap, day);
       break;
     case 5:
-      setId = document.getElementById("vendredi").appendChild(titleParap);
-      setId.setAttribute("id", data.titleInputValue + "p");
+      setmyId(data, titleParap, day);
       break;
     case 6:
-      setId = document.getElementById("samedi").appendChild(titleParap);
-      setId.setAttribute("id", data.titleInputValue + "p");
+      setmyId(data, titleParap, day);
       break;
     case 7:
-      setId = document.getElementById("dimanche").appendChild(titleParap);
-      setId.setAttribute("id", data.titleInputValue + "p");
+      setmyId(data, titleParap, day);
       break;
   }
 }
@@ -114,12 +111,17 @@ const _handleSubmit = (e) => {
   const titleInputValue = document.getElementById("title").value;
   const adressInputValue = document.getElementById("adress").value;
   const choiceSelectValue = document.getElementById("choix").value;
+  const imageValue = document.getElementById("myfile").files[0];
+
+  uploadImage(imageValue);
 
   const data = {
     titleInputValue,
     adressInputValue,
     choiceSelectValue,
+    imageValue,
   };
+
   if (choiceSelectValue == 0) {
     alert("Il faut choisir où ajouter la série !");
   } else if (choiceSelectValue == 1) {
@@ -149,3 +151,24 @@ const _handleSupr = (e) => {
 };
 myForm.addEventListener("submit", _handleSubmit);
 myformSup.addEventListener("submit", _handleSupr);
+
+function uploadImage(pictureFile) {
+  let link = "";
+  const data = new FormData();
+  data.append("image", pictureFile);
+
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === 4) {
+      console.log(this.responseText);
+      link = this.responseText.data.link;
+    }
+  });
+
+  xhr.open("POST", "https://api.imgur.com/3/image");
+  xhr.setRequestHeader("Authorization", "Client-ID 955b6fc4ff1ae7f");
+
+  xhr.send(data);
+}
