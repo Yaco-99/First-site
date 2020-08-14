@@ -142,6 +142,7 @@ const _handleSubmit = async (e) => {
   console.log(choiceSelectValue);
   if (choiceSelectValue == 0) {
     alert("Il faut choisir où ajouter la série !");
+    return;
   } else if (choiceSelectValue == 1) {
     addTitle(data);
   } else {
